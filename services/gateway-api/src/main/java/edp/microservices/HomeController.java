@@ -13,8 +13,13 @@ record HelloWorld(
 @RestController
 @RequestMapping
 public class HomeController {
-    @GetMapping
+    @GetMapping("/public")
     public ResponseEntity<HelloWorld> helloWorld() {
         return ResponseEntity.ok().body(new HelloWorld("Hello world!"));
+    }
+
+    @GetMapping("/secure")
+    public ResponseEntity<HelloWorld> secureHelloWorld() {
+        return ResponseEntity.ok().body(new HelloWorld("Secure hello world!"));
     }
 }
