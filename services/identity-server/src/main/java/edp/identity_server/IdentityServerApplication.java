@@ -1,12 +1,13 @@
-package edp.product_api;
+package edp.identity_server;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ProductApiApplication {
+public class IdentityServerApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ProductApiApplication.class, args);
+		SpringApplication.run(IdentityServerApplication.class, args);
 	}
+
 }
