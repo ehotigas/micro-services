@@ -1,8 +1,8 @@
-package edp.identity_server.permition.dto;
+package edp.identity_server.permission.dto;
 
 import java.util.List;
 
-import edp.identity_server.permition.Permition;
+import edp.identity_server.permission.Permission;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -14,6 +14,6 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class GetPermitionDto {
-    private List<Permition> permitions;
+public class GetPermissionDto {
+    private List<Permission> permissions;
 }

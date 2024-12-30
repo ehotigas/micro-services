@@ -15,6 +15,7 @@ public interface UserMapper {
     @Mapping(target = "createdAt", ignore = true)
     @Mapping(target = "deleted", ignore = true)
     @Mapping(target = "id", ignore = true)
+    @Mapping(target = "permissions", ignore = true)
     User toEntity(CreateUserDto dto);
 
     @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
@@ -23,5 +24,6 @@ public interface UserMapper {
     @Mapping(target = "email", ignore = true)
     @Mapping(target = "id", ignore = true)
     @Mapping(target = "username", ignore = true)
+    @Mapping(target = "permissions", ignore = true)
     User partialUpdate(@MappingTarget User entity, UpdateUserDto dto);
 }

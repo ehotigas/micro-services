@@ -1,11 +1,11 @@
-package edp.identity_server.permition;
+package edp.identity_server.permission;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import edp.identity_server.user.permition.UserPermition;
+import edp.identity_server.user.permission.UserPermission;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -23,13 +23,13 @@ import lombok.ToString;
 
 
 @Entity
-@Table(name = "permition")
+@Table(name = "permission")
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class Permition {
+public class Permission {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column
@@ -41,7 +41,7 @@ public class Permition {
     @Column(name = "created_at")
     private LocalDateTime createdAt;
 
-    @OneToMany(mappedBy = "permition", cascade = CascadeType.PERSIST, orphanRemoval = false, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "permission", cascade = CascadeType.PERSIST, orphanRemoval = false, fetch = FetchType.EAGER)
     @JsonIgnore
-    private List<UserPermition> userPermition;
+    private List<UserPermission> userPermission;
 }

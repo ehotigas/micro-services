@@ -1,4 +1,4 @@
-package edp.identity_server.user.permition;
+package edp.identity_server.permission;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -11,29 +11,29 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import edp.identity_server.user.permition.dto.CreateUserPermitionDto;
-import edp.identity_server.user.permition.dto.GetUserPermitionDto;
+import edp.identity_server.permission.dto.CreatePermissionDto;
+import edp.identity_server.permission.dto.GetPermissionDto;
 import jakarta.validation.Valid;
 
-@RestController
-@RequestMapping("/user-permition")
-public class UserPermitionController {
-    @Autowired
-    private IUserPermitionService service;
 
-    @GetMapping("/{userId}")
-    public ResponseEntity<GetUserPermitionDto> findAllByUser(@PathVariable("userId") Long userId) {
-        return ResponseEntity.ok().body(service.findAllByUser(userId));
+@RestController
+@RequestMapping("/permission")
+public class PermissionController {
+    @Autowired
+    private IPermissionService service;
+
+    @GetMapping
+    public ResponseEntity<GetPermissionDto> findAll() {
+        return ResponseEntity.ok().body(service.findAll());
     }
 
     @PostMapping
-    public ResponseEntity<UserPermition> save(@Valid @RequestBody CreateUserPermitionDto input) {
+    public ResponseEntity<Permission> save(@Valid @RequestBody CreatePermissionDto input) {
         return ResponseEntity.status(HttpStatus.CREATED).body(service.save(input));
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<UserPermition> remove(@PathVariable("id") Long id) {
+    public ResponseEntity<Permission> remove(@PathVariable("id") Long id) {
         return ResponseEntity.ok().body(service.remove(id));
     }
-
 }

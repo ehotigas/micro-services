@@ -1,4 +1,4 @@
-package edp.identity_server.permition.dto;
+package edp.identity_server.permission.dto;
 
 import jakarta.annotation.Nonnull;
 import jakarta.validation.constraints.NotEmpty;
@@ -13,7 +13,7 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class CreatePermitionDto {
+public class CreatePermissionDto {
     @Nonnull
     @NotEmpty
     private String role;

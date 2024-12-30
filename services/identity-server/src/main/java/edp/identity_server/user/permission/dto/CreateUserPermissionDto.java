@@ -1,4 +1,4 @@
-package edp.identity_server.user.permition.dto;
+package edp.identity_server.user.permission.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -11,7 +11,7 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class CreateUserPermitionDto {
+public class CreateUserPermissionDto {
     private Long user;
-    private Long permition;
+    private Long permission;
 }

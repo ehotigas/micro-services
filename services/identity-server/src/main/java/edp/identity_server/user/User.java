@@ -5,7 +5,7 @@ import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import edp.identity_server.user.permition.UserPermition;
+import edp.identity_server.user.permission.UserPermission;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -54,5 +54,5 @@ public class User {
     private Boolean deleted;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.PERSIST, orphanRemoval = false)
-    private List<UserPermition> permitions;
+    private List<UserPermission> permissions;
 }

@@ -1,4 +1,4 @@
-package edp.identity_server.user.permition;
+package edp.identity_server.user.permission;
 
 import java.util.List;
 
@@ -8,6 +8,6 @@ import org.springframework.stereotype.Repository;
 import edp.identity_server.user.User;
 
 @Repository
-public interface IUserPermitionRepository extends JpaRepository<UserPermition, Long> {
-    List<UserPermition> findAllByUser(User user);
+public interface IUserPermissionRepository extends JpaRepository<UserPermission, Long> {
+    List<UserPermission> findAllByUser(User user);
 }
